@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="color-scheme" content="dark" />
+  <meta name="color-scheme" content="light" />
+  <meta name="theme-color" content="#FFFBEC" />
   <meta name="description" content="Yosuf Mobark — Product Manager, Business Analyst and ERP Specialist. 10+ years delivering ERP, HRIS and recruitment platforms." />
   <meta name="author" content="Yosuf Mobark" />
   <meta property="og:title" content="Yosuf Mobark — Product Manager · Business Analyst · ERP Specialist" />
@@ -16,16 +17,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='28' font-family='serif' fill='%23ffc857'%3EY%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23FFC107'/%3E%3Ctext x='50%25' y='68%25' text-anchor='middle' font-size='20' font-family='serif' font-weight='700' fill='%231a1f3a'%3EY%3C/text%3E%3C/svg%3E" />
 </head>
 <body>
   <canvas id="bg"></canvas>
+  <div id="scroll-progress" aria-hidden="true"><span></span></div>
 
   <main>
     <!-- HERO -->
     <section class="hero" id="top">
       <p class="eyebrow reveal">Portfolio · CV</p>
-      <h1 class="name reveal">Yosuf <span class="accent">Mobark</span></h1>
+      <h1 class="name reveal" data-parallax="0.3">Yosuf <span class="accent">Mobark</span></h1>
       <p class="title reveal">
         <span class="role">Product Manager</span>
         <span class="dot">·</span>
@@ -59,10 +61,10 @@
         including <strong>ZATCA</strong> and <strong>Eltizam</strong>.
       </p>
       <ul class="stats">
-        <li class="reveal"><span class="n">10+</span><span class="l">Years in ERP</span></li>
-        <li class="reveal"><span class="n">6+</span><span class="l">Product roles</span></li>
-        <li class="reveal"><span class="n">200+</span><span class="l">Users trained</span></li>
-        <li class="reveal"><span class="n">6</span><span class="l">Retail branches scaled</span></li>
+        <li class="reveal" data-dir="l"><span class="n">10+</span><span class="l">Years in ERP</span></li>
+        <li class="reveal" data-dir="l"><span class="n">7</span><span class="l">Product roles</span></li>
+        <li class="reveal" data-dir="r"><span class="n">200+</span><span class="l">Users trained</span></li>
+        <li class="reveal" data-dir="r"><span class="n">6</span><span class="l">Retail branches scaled</span></li>
       </ul>
     </section>
 
@@ -73,7 +75,7 @@
         <h2>Experience</h2>
       </header>
       <ol class="timeline">
-        <li class="t-item reveal">
+        <li class="t-item reveal" data-dir="l">
           <div class="t-marker"></div>
           <p class="t-date">Mar 2025 — now</p>
           <h3 class="t-role">Product Manager</h3>
@@ -86,8 +88,7 @@
             <li><strong>Stakeholder management.</strong> Business-process reengineering and training for 200+ users to secure product adoption.</li>
           </ul>
         </li>
-
-        <li class="t-item reveal">
+        <li class="t-item reveal" data-dir="r">
           <div class="t-marker"></div>
           <p class="t-date">Feb 2024 — Mar 2025</p>
           <h3 class="t-role">Technical Team Lead</h3>
@@ -98,8 +99,7 @@
             <li><strong>Performance.</strong> 4× faster page loads on critical retail operations, directly improving staff productivity.</li>
           </ul>
         </li>
-
-        <li class="t-item reveal">
+        <li class="t-item reveal" data-dir="l">
           <div class="t-marker"></div>
           <p class="t-date">Nov 2020 — Feb 2024</p>
           <h3 class="t-role">Odoo Product &amp; Project Manager</h3>
@@ -110,8 +110,7 @@
             <li><strong>Custom solutions.</strong> Resolved business challenges with custom reports, API integrations and UI optimisations.</li>
           </ul>
         </li>
-
-        <li class="t-item reveal">
+        <li class="t-item reveal" data-dir="r">
           <div class="t-marker"></div>
           <p class="t-date">Dec 2018 — Jun 2020</p>
           <h3 class="t-role">Business Analyst</h3>
@@ -122,8 +121,7 @@
             <li><strong>Process improvement.</strong> Data-driven recommendations that improved operational efficiency.</li>
           </ul>
         </li>
-
-        <li class="t-item reveal">
+        <li class="t-item reveal" data-dir="l">
           <div class="t-marker"></div>
           <p class="t-date">Aug 2017 — Dec 2018</p>
           <h3 class="t-role">Odoo Techno-Functional Specialist</h3>
@@ -134,8 +132,7 @@
             <li><strong>Access control.</strong> Security architecture and permission structures by department role.</li>
           </ul>
         </li>
-
-        <li class="t-item reveal">
+        <li class="t-item reveal" data-dir="r">
           <div class="t-marker"></div>
           <p class="t-date">May 2016 — Aug 2017</p>
           <h3 class="t-role">OpenERP / Odoo Developer</h3>
@@ -145,8 +142,7 @@
             <li><strong>Technical documentation.</strong> Maintained API specifications and deployment procedures across all modules.</li>
           </ul>
         </li>
-
-        <li class="t-item reveal">
+        <li class="t-item reveal" data-dir="l">
           <div class="t-marker"></div>
           <p class="t-date">Oct 2015 — May 2016</p>
           <h3 class="t-role">Software Engineer</h3>
@@ -160,69 +156,117 @@
       </ol>
     </section>
 
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <header class="section-head reveal">
+        <span class="num">03</span>
+        <h2>Selected projects</h2>
+      </header>
+      <p class="lead reveal">A few of the products and platforms I've designed, led or delivered end-to-end.</p>
+
+      <div class="project-grid">
+        <article class="project reveal" data-dir="l">
+          <div class="project-head">
+            <span class="chip">SaaS</span>
+            <h3>AMC — Task Management</h3>
+          </div>
+          <p>Multi-tenant task-management SaaS: workspaces, boards, assignments, deadlines, notifications and reporting. Designed the product spec, roadmap and delivery.</p>
+          <ul class="tags">
+            <li>Product spec</li><li>Multi-tenant</li><li>Roadmap</li><li>UAT</li>
+          </ul>
+        </article>
+
+        <article class="project reveal" data-dir="r">
+          <div class="project-head">
+            <span class="chip">Logistics</span>
+            <h3>247Logistic — Barq</h3>
+          </div>
+          <p>Fleet &amp; last-mile operations platform: dispatch, driver app, live tracking and proof-of-delivery. Owned the integration between the back-office portal and the native driver app.</p>
+          <ul class="tags">
+            <li>Dispatch</li><li>Driver app</li><li>Live tracking</li><li>API integration</li>
+          </ul>
+        </article>
+
+        <article class="project reveal" data-dir="l">
+          <div class="project-head">
+            <span class="chip">SaaS</span>
+            <h3>Tab3 — SaaS platform</h3>
+          </div>
+          <p>Lightweight follow-up and task-tracking SaaS. Led the discovery, wireframes, data model and the full delivery to first customers.</p>
+          <ul class="tags">
+            <li>Discovery</li><li>Wireframes</li><li>Data model</li><li>Launch</li>
+          </ul>
+        </article>
+
+        <article class="project reveal" data-dir="r">
+          <div class="project-head">
+            <span class="chip">Product</span>
+            <h3>Nline</h3>
+          </div>
+          <p>Online services platform delivered end-to-end — requirements gathering, product spec, UAT, launch and post-launch stakeholder training.</p>
+          <ul class="tags">
+            <li>Requirements</li><li>Spec</li><li>Launch</li><li>Training</li>
+          </ul>
+        </article>
+
+        <article class="project reveal wide" data-dir="l">
+          <div class="project-head">
+            <span class="chip">ERP · Energy</span>
+            <h3>شركة شاهين للطاقة الشمسية — Shaheen Solar Energy</h3>
+          </div>
+          <p>Full Odoo ERP implementation for a solar-energy contractor: HR, inventory, procurement, project costing and installation workflows. Integrated field operations with back-office accounting and reporting for executive dashboards.</p>
+          <ul class="tags">
+            <li>Odoo ERP</li><li>Project costing</li><li>Inventory</li><li>HR</li><li>Dashboards</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
     <!-- SKILLS -->
     <section class="section" id="skills">
       <header class="section-head reveal">
-        <span class="num">03</span>
+        <span class="num">04</span>
         <h2>Skills</h2>
       </header>
       <div class="skill-grid">
-        <article class="skill-card reveal">
+        <article class="skill-card reveal" data-dir="l">
           <h3>Programming &amp; development</h3>
           <ul class="tags">
-            <li>Python (Odoo ORM)</li>
-            <li>SQL · PostgreSQL</li>
-            <li>XML · QWeb</li>
-            <li>JavaScript · OWL</li>
-            <li>HTML · CSS</li>
-            <li>Visual Basic .NET</li>
+            <li>Python (Odoo ORM)</li><li>SQL · PostgreSQL</li><li>XML · QWeb</li>
+            <li>JavaScript · OWL</li><li>HTML · CSS</li><li>Visual Basic .NET</li>
           </ul>
         </article>
-        <article class="skill-card reveal">
+        <article class="skill-card reveal" data-dir="r">
           <h3>ERP &amp; business systems</h3>
           <ul class="tags">
-            <li>Odoo (v8 → v19)</li>
-            <li>Enterprise architecture</li>
-            <li>Multi-instance · multi-location</li>
-            <li>Business-process automation</li>
+            <li>Odoo (v8 → v19)</li><li>Enterprise architecture</li>
+            <li>Multi-instance · multi-location</li><li>Business-process automation</li>
           </ul>
         </article>
-        <article class="skill-card reveal">
+        <article class="skill-card reveal" data-dir="l">
           <h3>Product management</h3>
           <ul class="tags">
-            <li>Product roadmap</li>
-            <li>User stories</li>
-            <li>Agile · Scrum</li>
-            <li>Stakeholder management</li>
-            <li>UAT</li>
+            <li>Product roadmap</li><li>User stories</li><li>Agile · Scrum</li>
+            <li>Stakeholder management</li><li>UAT</li>
           </ul>
         </article>
-        <article class="skill-card reveal">
+        <article class="skill-card reveal" data-dir="r">
           <h3>DevOps &amp; infrastructure</h3>
           <ul class="tags">
-            <li>Docker · Docker Compose</li>
-            <li>CI/CD (Jenkins · GitLab)</li>
-            <li>Linux admin</li>
-            <li>Nginx · Apache</li>
-            <li>Backup &amp; DR</li>
-            <li>Server hardening</li>
+            <li>Docker · Docker Compose</li><li>CI/CD (Jenkins · GitLab)</li>
+            <li>Linux admin</li><li>Nginx · Apache</li><li>Backup &amp; DR</li><li>Server hardening</li>
           </ul>
         </article>
-        <article class="skill-card reveal">
+        <article class="skill-card reveal" data-dir="l">
           <h3>Compliance (KSA)</h3>
           <ul class="tags">
-            <li>ZATCA (phase 1 &amp; 2)</li>
-            <li>Eltizam SOAP API</li>
-            <li>GOSI · Saudi labor</li>
+            <li>ZATCA (phase 1 &amp; 2)</li><li>Eltizam SOAP API</li><li>GOSI · Saudi labor</li>
           </ul>
         </article>
-        <article class="skill-card reveal">
+        <article class="skill-card reveal" data-dir="r">
           <h3>Tools &amp; platforms</h3>
           <ul class="tags">
-            <li>Git</li>
-            <li>Visual Studio</li>
-            <li>Project-management tools</li>
-            <li>API integration</li>
+            <li>Git</li><li>Visual Studio</li><li>Project-management tools</li><li>API integration</li>
           </ul>
         </article>
       </div>
@@ -231,7 +275,7 @@
     <!-- EDUCATION -->
     <section class="section" id="education">
       <header class="section-head reveal">
-        <span class="num">04</span>
+        <span class="num">05</span>
         <h2>Education</h2>
       </header>
       <article class="edu reveal">
@@ -244,28 +288,22 @@
     <!-- CONTACT -->
     <section class="section contact-section" id="contact">
       <header class="section-head reveal">
-        <span class="num">05</span>
+        <span class="num">06</span>
         <h2>Get in touch</h2>
       </header>
-      <p class="lead reveal">
-        Open to Product Manager, Business Analyst and ERP Specialist roles — on-site in Riyadh or remote.
-      </p>
+      <p class="lead reveal">Open to Product Manager, Business Analyst and ERP Specialist roles — on-site in Riyadh or remote.</p>
       <div class="contact-grid">
-        <a class="contact-card reveal" href="mailto:yousifmobark@gmail.com">
-          <span class="k">Email</span>
-          <span class="v">yousifmobark@gmail.com</span>
+        <a class="contact-card reveal" data-dir="l" href="mailto:yousifmobark@gmail.com">
+          <span class="k">Email</span><span class="v">yousifmobark@gmail.com</span>
         </a>
-        <a class="contact-card reveal" href="tel:+966534613790">
-          <span class="k">Phone</span>
-          <span class="v">+966 53 461 3790</span>
+        <a class="contact-card reveal" data-dir="l" href="tel:+966534613790">
+          <span class="k">Phone</span><span class="v">+966 53 461 3790</span>
         </a>
-        <a class="contact-card reveal" href="https://github.com/Yousif-Mobark" target="_blank" rel="noopener">
-          <span class="k">GitHub</span>
-          <span class="v">github.com/Yousif-Mobark</span>
+        <a class="contact-card reveal" data-dir="r" href="https://github.com/Yousif-Mobark" target="_blank" rel="noopener">
+          <span class="k">GitHub</span><span class="v">github.com/Yousif-Mobark</span>
         </a>
-        <div class="contact-card reveal">
-          <span class="k">Location</span>
-          <span class="v">Wadi Tarj, Riyadh, Saudi Arabia</span>
+        <div class="contact-card reveal" data-dir="r">
+          <span class="k">Location</span><span class="v">Wadi Tarj, Riyadh, Saudi Arabia</span>
         </div>
       </div>
     </section>
@@ -278,12 +316,45 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.3/p5.min.js" defer></script>
   <script src="sketch.js" defer></script>
   <script>
-    // Scroll-reveal + current year, no deps.
+    // Year
     document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Reveal animations (direction-aware via data-dir)
     const io = new IntersectionObserver((entries) => {
       for (const e of entries) if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-    }, { threshold: 0.12, rootMargin: '0px 0px -5% 0px' });
+    }, { threshold: 0.14, rootMargin: '0px 0px -6% 0px' });
     document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+
+    // Scroll-progress bar
+    const progress = document.querySelector('#scroll-progress span');
+    let ticking = false;
+    function updateProgress() {
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      const p = h > 0 ? (window.scrollY / h) * 100 : 0;
+      progress.style.transform = `scaleX(${p / 100})`;
+      ticking = false;
+    }
+    window.addEventListener('scroll', () => {
+      if (!ticking) { requestAnimationFrame(updateProgress); ticking = true; }
+    }, { passive: true });
+    updateProgress();
+
+    // Hero parallax (data-parallax = speed factor; 0 = pinned, 1 = scrolls with page)
+    const parallaxEls = document.querySelectorAll('[data-parallax]');
+    const prefersReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!prefersReduce && parallaxEls.length) {
+      let pt = false;
+      function updateParallax() {
+        for (const el of parallaxEls) {
+          const s = parseFloat(el.dataset.parallax) || 0;
+          el.style.transform = `translate3d(0, ${window.scrollY * s * -1}px, 0)`;
+        }
+        pt = false;
+      }
+      window.addEventListener('scroll', () => {
+        if (!pt) { requestAnimationFrame(updateParallax); pt = true; }
+      }, { passive: true });
+    }
   </script>
 </body>
 </html>

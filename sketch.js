@@ -1,19 +1,19 @@
-// Background sketch: a quiet network of connected nodes. The nodes drift on a
-// Perlin flow field; nearby pairs draw thin links that fade with distance.
-// Soft gold accent, dark navy background. Hover attracts the nearest nodes.
-// Reduced-motion users get a static pattern (no draw loop).
+// Background: a quiet network of connected nodes on a warm sunshine canvas.
+// Nodes drift on a Perlin flow field; nearby pairs draw thin amber links that
+// fade with distance. Hover gently attracts the nearest nodes. Reduced-motion
+// users get a single static frame.
 
 const CFG = {
-  bgTop:    "#0b1020",
-  bgBottom: "#060915",
-  node:     "#ffc857",
-  link:     "#ffc857",
-  density:  0.000085,      // nodes per pixel of canvas
-  linkDist: 150,           // px
-  speed:    0.35,          // base drift speed
-  noiseScl: 0.0019,        // flow-field frequency
-  mouseR:   260,           // mouse attraction radius
-  mouseF:   0.065,         // mouse attraction strength
+  bgTop:    "#FFFBEC",   // very light sunshine
+  bgBottom: "#FFEEB5",   // soft yellow
+  node:     "#FF8A00",   // amber
+  link:     "#FF9F2A",
+  density:  0.00009,     // nodes per pixel of canvas
+  linkDist: 150,         // px
+  speed:    0.35,
+  noiseScl: 0.0019,
+  mouseR:   260,
+  mouseF:   0.065,
 };
 
 let nodes = [];
@@ -22,7 +22,6 @@ let reduceMotion = false;
 
 function setup() {
   const c = createCanvas(windowWidth, windowHeight);
-  c.parent(document.body);
   // Reuse the <canvas id="bg"> element so our CSS positioning applies.
   const existing = document.getElementById("bg");
   if (existing) {
@@ -38,7 +37,7 @@ function setup() {
 
 function seed() {
   nodes = [];
-  const n = Math.max(40, Math.min(140, Math.floor(w * h * CFG.density)));
+  const n = Math.max(45, Math.min(140, Math.floor(w * h * CFG.density)));
   for (let i = 0; i < n; i++) {
     nodes.push({
       x: random(w), y: random(h),
@@ -58,13 +57,12 @@ function windowResized() {
 function draw() { drawFrame(); }
 
 function drawFrame() {
-  // Gradient background by stacking two translucent rects — p5 has no gradient primitive.
-  background(CFG.bgBottom);
+  // vertical gradient background (p5 has no gradient primitive)
   noStroke();
+  const top = color(CFG.bgTop);
+  const bot = color(CFG.bgBottom);
   for (let i = 0; i < h; i += 2) {
-    const t = i / h;
-    const col = lerpColor(color(CFG.bgTop), color(CFG.bgBottom), t);
-    fill(col);
+    fill(lerpColor(top, bot, i / h));
     rect(0, i, w, 2);
   }
 
@@ -72,7 +70,7 @@ function drawFrame() {
   const mx = mouseX, my = mouseY;
   const haveMouse = mx >= 0 && my >= 0 && mx <= w && my <= h;
 
-  // --- update ---
+  // update
   for (const p of nodes) {
     const a = noise(p.x * CFG.noiseScl, p.y * CFG.noiseScl, t) * TWO_PI * 2;
     p.vx += Math.cos(a) * CFG.speed * 0.05;
@@ -88,12 +86,11 @@ function drawFrame() {
     }
     p.vx *= 0.94; p.vy *= 0.94;
     p.x += p.vx; p.y += p.vy;
-    // wrap
     if (p.x < -5) p.x = w + 5; else if (p.x > w + 5) p.x = -5;
     if (p.y < -5) p.y = h + 5; else if (p.y > h + 5) p.y = -5;
   }
 
-  // --- links ---
+  // links
   const link = color(CFG.link);
   strokeWeight(1);
   for (let i = 0; i < nodes.length; i++) {
@@ -104,25 +101,23 @@ function drawFrame() {
       const d2 = dx * dx + dy * dy;
       const r2 = CFG.linkDist * CFG.linkDist;
       if (d2 < r2) {
-        const alpha = (1 - d2 / r2) * 120;
-        link.setAlpha(alpha);
+        link.setAlpha((1 - d2 / r2) * 70);  // softer on light bg
         stroke(link);
         line(a.x, a.y, b.x, b.y);
       }
     }
   }
 
-  // --- nodes ---
+  // nodes
   const dot = color(CFG.node);
   noStroke();
   for (const p of nodes) {
     const pulse = 0.75 + Math.sin(frameCount * 0.03 + p.phase) * 0.25;
     dot.setAlpha(200);
     fill(dot);
-    circle(p.x, p.y, 2.4 * pulse);
-    // halo
-    dot.setAlpha(40);
+    circle(p.x, p.y, 2.6 * pulse);
+    dot.setAlpha(45);
     fill(dot);
-    circle(p.x, p.y, 7 * pulse);
+    circle(p.x, p.y, 8 * pulse);
   }
 }
